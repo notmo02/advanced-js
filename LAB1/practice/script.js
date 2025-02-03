@@ -1,11 +1,30 @@
 // Fundamental data types
 
+/*
+number - integer
+string
+boolean
+float
+*/ 
+
+
 // Typeof
+// alert(typeof 8);
 
 // Let vs Const vs Var
+var x = 10;
+
+let age = 15;
+age = 20;
+
+const name = "John";
 
 // Reassignment (no let)
+age = 30;
+age = 40;
+age = 50;
 
+alert(age);
 
 // Essential Operations
 
