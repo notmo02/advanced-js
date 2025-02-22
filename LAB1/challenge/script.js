@@ -16,26 +16,49 @@ let shoes = 89.78;
 
 
 // 1. If divided evenly, how much would each sibling get for the week?
+let even = weeklyAllowance/3;
+console.log(even);
+// $43 for each
 
 // 2. How many games can Jordan buy with their cut?
+console.log(even/game);
+// only 2 games
 
 // 3. The cost of games just went up by a dollar and shoes are on sale at 50% (half) off. Change the variables to their new prices.
+game = 16.99;
+shoes = 89.78/2;
 
 // 4. Quinn and Ricardo are twins. If they put their money together, how many on sale shoes can they buy in a month (4 weeks)?
+var quinnRicardo = even * 2;
+var salaryMonthQr = quinnRicardo * 4;
+console.log(salaryMonthQr/shoes);
+// around 7 shoes
 
 // 5. How many more games can they buy if they put their money together compared to if they had bought games on their own?
+var gamestg = quinnRicardo/game;
+console.log(gamestg);
+var gamesAlone = Math.floor(even3/game);
+console.log(gamesAlone);
+console.log(gamestg - gamesAlone + "more games");
 
 // 6. Print out the three siblings' names. "The three siblings are __, __, and ___."
+console.log("The three siblings are" + sibling1 + "," + sibling2 + "," + sibling3 + ".")
 
 // 7. Use console.log() and a built-in method to count how many characters are in Ricardo's name.
+console.log(sibling3.length);
 
 // 8. Use console.log() and a built-in method to print out the string "RICARDO MONTOYA DE LA ROSA RAMIREZ"
+console.log(sibling3.toUpperCase);
 
 // 9. Use console.log() and a built-in method to print out the string "ricardo montoya de la rosa ramirez"
+console.log(sibling3.toLowerCase);
 
 // 10. Use console.log() and a built-in method to print out Ricardo's name, but with all the instances of the letter a removed or deleted.
+console.log(sibling3.replaceAll("a",''));
 
 // 11. Use console.log() and a built-in method to print out "De La Rosa"
+const deLaRosa = sibling3.split(' ').slice(2, 5).join(' ');
+console.log(deLaRosa);
 
 // Medium Challenges
 
@@ -46,9 +69,15 @@ function getRandomNum() {
     return Math.floor(Math.random() * 100);
 }
 
+console.log(getRandomNum(5));
+
 function greeting(name) {
     return `Hello ${name}, I'm glad you can make it!`;
 }
+
+console.log(greeting("Mohammed"));
+
+
 
 function perfectRoot(x) {
     let root = Math.sqrt(x);
@@ -59,47 +88,60 @@ function perfectRoot(x) {
     }
 }
 
+console.log(perfectRoot(4));
+console.log(perfectRoot (5));
+
 // 13. Fix/Finish the following functions.
 /// Then, call them with at least 2 different inputs to ensure they work.
 
 /// a. Adds 2 numbers and returns the sum
 const addNums = (x, y) => {
     let sum = x + y;
+    console.log("The sum of" + x,"+ " + y , "= " + sum);
 }
 // uncomment the line below, to call the function, and add one more function call
-// console.log( addNums(4, 6) );
+console.log( addNums(4, 6) );
+console.log( addNums(3, 5) );
 
 
 /// b. Prints a special message if name is "Beyonce"
 const isBeyonce = (name) => {
-    // if( ) { 
-    //     return "Welcome Queen!";
-    // } else {
-    //     return `Sorry {name}, you're not Beyonce`;
-    // }
+     if(name == "Beyonce" ) { 
+         return "Welcome Queen!";
+     } else {
+         return `Sorry ${name}, you're not Beyonce`;
+     }
 }
 // Test "Beyonce" and other names to ensure it works
-
+console.log (isBeyonce("Mohammed"));
+console.log (isBeyonce("Beyonce"));
 
 
 /// c. If the number is even, return the number divided by 2, otherwise, return the number
 /// For example reduceEvens(10) => 5 -- reduceEvens(11) => 11
 const reduceEvens = (x) => {
-    // if( ){
+     if(x%2 === 0) {
+        console.log(x/2);
 
-    // } else {
-    //     return x;
-    // }
+     } else {
+         return x;
+     }
 }
 //Write your own function calls
-
+console.log(reduceEvens(10));
+console.log(reduceEvens(11));
 
 // 14. Write a function called shortenString(string) that returns the first 10 characters of a string if it is longer than 10
 //remove all
-const shortenString = (string) => {
+function shortenString(string) {
 
+    if (string.length > 10) {
+        return string.slice(0, 10);
+    }
+    return string;
 }
-
+console.log(shortenString("Mohammed"));
+console.log(shortenString("MohammedMohammedMohammed"));
 
 
 // Spicy Challenges
