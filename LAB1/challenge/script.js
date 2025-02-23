@@ -153,26 +153,79 @@ let soda = 1.00;
 // Prompt the user for their budget and call the function.
 /// If no burgers, fries, and sodas can be bought, return "Sorry, no burgers for you."
 
+let budget = prompt(" What is your budget? ");
 const buyBurgers = (budget) => {
-
+    if(budget < 1){
+        console.log("Sorry, no burgers for you.");
+    } else{
+        let burgerPay = budget / burger;
+        console.log("You can buy, ", burgerPay, "Burgers");
+    }
 }
+console.log(buyBurgers(0.5));
+console.log(buyBurgers(5));
 
 // 16. A meal consists of 1 burger, 1 fry, and 1 soda.
 /// Write a function called buyMeals(budget) that tells the user how many meals they can buy and how much money they will have left over.
 // Prompt the user for their budget and call the function.
 /// Bonus: Round the answer to the nearest penny.
+const mealPrice = burger + fries + soda;
+console.log(mealPrice);
+//Meal Price = 9
 const buyMeals = (budget) => {
-
+    if(budget < 9){
+        console.log("You cannot buy any meals");
+    } else {
+        let mealsAmount=budget/mealPrice;
+        let mealsAmountBought=Math.round(mealsAmount)
+        console.log("You can buy:", mealsAmountBought, "meals");
+        let total=mealsAmountBought*9;
+        console.log("You have", "$",budget - total, "left");
+    }
 }
+console.log(buyMeals(9));
+console.log(buyMeals(18));
+console.log(buyMeals(21));
+console.log(buyMeals(29));
 
 
 // 17. [Challenge] Write a function missingLeg(side1, side2) that takes in the length of a hypotenuse and a leg of a right triangle and prints out the missing leg's length
 // Prompt the user for the two sides and call the function
 /// The larger side should be the hypotenuse  
-
+let lengthH=prompt("What is the length of the hypotenuse? ");
+let legRt=prompt("What is the length of the leg of the right traingle? ");
+const missingLeg = (lengthH, legRt) => {
+    if(lengthH < legRt){
+        console.log("Length of the hypotenuse must be largest length in the traingle");
+    } else {
+        let equationMathH =  lengthH *2;
+        let equationMathRt= legRt * 2;
+        let baseOfMS=equationMathH - equationMathRt;
+        let missingSideLength=Math.sqrt(baseOfMS);
+        console.log(missingSideLength + " is the length of the missing side. ");
+    }
+}
+console.log(missingLeg(10, 5));
+console.log(missingLeg(5, 10));
 
 
 // 18. [Super Challenge] In math, Factorial is the product of an integer and all the integers below it.
 /// For example: factorial(3) = 3*2*1 = 6 ---  factorial(5) = 5*4*3*2*1 = 120
 /// Write a function factorial(x) that finds the factorial of any integer.
 // Prompt the user for a number and call the function
+
+let numForFactorial=prompt("Type in a number for a factorial");
+const factorialCalculations = (numForFactorial) => {
+    if(numForFactorial == 1){
+        console.log("number typed must be bigger than one becuase factorial of one is one.");
+    } else {
+    let base= 1;
+    for (let i = 1; i <= numForFactorial; i++) {
+        base *= i;
+    }
+    return base;
+    }
+}
+console.log(factorialCalculations(1));
+console.log(factorialCalculations(5));
+console.log(factorialCalculations(10));
